@@ -1,0 +1,5 @@
+employee_id	last_name	first_name	start_date	team_name	rookie_flag
+xxxxxx	ヘルメス	太郎	20190107	A	
+zzzzzz	ヘルメス	三郎	20190701	B	1
+xxxxxx	ヘルメス	太郎	20191101	C
+zzzzzz	ヘルメス	三郎	20191101	C	1

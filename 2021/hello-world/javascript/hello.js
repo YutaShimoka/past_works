@@ -1,0 +1,1 @@
+document.currentScript.insertAdjacentHTML('beforebegin', '‚±‚ñ‚É‚¿‚Í¢ŠE');

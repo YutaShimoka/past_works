@@ -1,0 +1,68 @@
+@model library_system.Models.LibraryCardMgr
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" style="text-align: center">
+    <form asp-action="Index">
+        <div class="form-group">
+            <label>Search: IsbnCode</label>
+            <input asp-for="LibraryCardUI.FirstOrDefault().SearchWord" class="form-control" placeholder="IsbnCode" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+    </form>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LibraryCardUI.FirstOrDefault().IsbnCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibraryCardUI.FirstOrDefault().UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibraryCardUI.FirstOrDefault().CheckoutDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibraryCardUI.FirstOrDefault().ReturnPlansDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibraryCardUI.FirstOrDefault().ReturnDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.LibraryCardUI) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsbnCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckoutDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnPlansDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CheckoutNumber">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CheckoutNumber">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CheckoutNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

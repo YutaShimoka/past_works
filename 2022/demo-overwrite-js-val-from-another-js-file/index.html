@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>demo-overwrite-js-val-from-another-js-file</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+	<style>
+		body {
+			line-height: 1.5;
+		}
+
+		h1 {
+			border-bottom: solid 4px;
+		}
+
+		h2 {
+			border-bottom: solid 2px;
+		}
+
+		h3 {
+			border-bottom: solid 1px;
+		}
+
+		table {
+			border-collapse: collapse;
+			margin: 0.5em;
+		}
+
+		code {
+			font-weight: bold;
+			color: purple;
+		}
+
+		pre {
+			border: 1px solid black;
+			padding: 0.3em;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1>
+		<script>document.currentScript.insertAdjacentHTML('beforebegin', document.title);</script>
+	</h1>
+
+	<h2>準備</h2>
+
+	<script>var a = 3;</script>
+
+	<!-- 説明 -->
+	<p>
+		index.html内で、次のように宣言しておく。
+	</p>
+	<p><strong>index.html</strong></p>
+	<pre><code>&lt;script&gt;var a = 3;&lt;/script&gt;</code></pre>
+
+	<h3>事前確認</h3>
+
+	<p>
+		[DEBUG] a&nbsp;=
+		<script>document.currentScript.insertAdjacentHTML('beforebegin', a);</script>
+	</p>
+
+	<h2>変数aを上書き</h2>
+
+	<script src="./hoge.js"></script>
+
+	<!-- 説明 -->
+	<p>
+		index.html内で、次のようにhoge.jsを呼び出す。
+	</p>
+	<p><strong>index.html</strong></p>
+	<pre><code>&lt;script src="./hoge.js"&gt;&lt;/script&gt;</code></pre>
+	<p>
+		なお、hoge.jsでは、次のように宣言されている。
+	</p>
+	<p><strong>hoge.js</strong></p>
+	<pre><code>var a = 4;</code></pre>
+
+	<h3>事後確認</h3>
+
+	<p>
+		[DEBUG] a&nbsp;=
+		<script>document.currentScript.insertAdjacentHTML('beforebegin', a);</script>
+	</p>
+
+</body>
+
+<hr>
+<address>5h1m0kayu02</address>
+
+</html>

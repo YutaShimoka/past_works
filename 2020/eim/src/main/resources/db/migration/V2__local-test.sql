@@ -1,0 +1,18 @@
+insert into "eim".employee(employee_id,mail,password,login_failure_count,last_name,first_name,last_name_kana,first_name_kana,main_organization,position,authority_type,status_type,operator,created_date,last_modified_date) values ('xxxxxx','a@a','$2a$10$cQQuCJPifu9f8Pqm1gpLWOeLPkzLR2Q1qhEJH27OInZZFhXaALzoS',0,'ヘルメス','太郎','ヘルメス','タロウ','{"group_code": null, "section_code": null, "department_code": "04"}',30,'Admin','XXX','system',current_timestamp,current_timestamp);
+insert into "eim".employee(employee_id,mail,password,login_failure_count,last_name,first_name,last_name_kana,first_name_kana,main_organization,position,authority_type,status_type,operator,created_date,last_modified_date) values ('yyyyyy','b@b','$2a$10$BQqlUTGX0p3IJGV1bJyKdO2SRKQQOTqrM4jdp0PJy6AHMw56X4Lq6',0,'ヘルメス','次郎','ヘルメス','ジロウ','{"group_code": null, "section_code": "01", "department_code": "01"}',10,'Company','Active','system',current_timestamp,current_timestamp);
+insert into "eim".employee(employee_id,mail,login_failure_count,last_name,first_name,last_name_kana,first_name_kana,main_organization,position,authority_type,status_type,operator,created_date,last_modified_date) values ('zzzzzz','c@c',0,'ヘルメス','三郎','ヘルメス','サブロウ','{"group_code": null, "section_code": null, "department_code": "04"}',10,'Employee','XXX','system',current_timestamp,current_timestamp);
+
+-- $2a$10$cQQuCJPifu9f8Pqm1gpLWOeLPkzLR2Q1qhEJH27OInZZFhXaALzoS // hermesadmin
+-- $2a$10$BQqlUTGX0p3IJGV1bJyKdO2SRKQQOTqrM4jdp0PJy6AHMw56X4Lq6 // 54321
+
+---------
+----------------------
+--- 部署マスター
+----------------------
+insert into "eim".department_master(department_code,department_name,department_authority,section_code,section_name,group_code,group_name,operator,created_date,last_modified_date) values ('01','総務部','Company',null,null,null,null,'system',current_timestamp,current_timestamp);
+insert into "eim".department_master(department_code,department_name,department_authority,section_code,section_name,group_code,group_name,operator,created_date,last_modified_date) values ('01','総務部','Company','01','総務課',null,null,'system',current_timestamp,current_timestamp);
+insert into "eim".department_master(department_code,department_name,department_authority,section_code,section_name,group_code,group_name,operator,created_date,last_modified_date) values ('02','教育部',null,null,null,null,null,'system',current_timestamp,current_timestamp);
+insert into "eim".department_master(department_code,department_name,department_authority,section_code,section_name,group_code,group_name,operator,created_date,last_modified_date) values ('03','システム営業部',null,null,null,null,null,'system',current_timestamp,current_timestamp);
+insert into "eim".department_master(department_code,department_name,department_authority,section_code,section_name,group_code,group_name,operator,created_date,last_modified_date) values ('03','システム営業部',null,'01','システム営業課',null,null,'system',current_timestamp,current_timestamp);
+insert into "eim".department_master(department_code,department_name,department_authority,section_code,section_name,group_code,group_name,operator,created_date,last_modified_date) values ('04','システム開発部',null,null,null,null,null,'system',current_timestamp,current_timestamp);
+insert into "eim".department_master(department_code,department_name,department_authority,section_code,section_name,group_code,group_name,operator,created_date,last_modified_date) values ('05','技術翻訳部',null,null,null,null,null,'system',current_timestamp,current_timestamp);

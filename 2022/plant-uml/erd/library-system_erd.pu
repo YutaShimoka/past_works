@@ -1,0 +1,42 @@
+@startuml library-system_erd
+
+hide circle
+
+entity "User" {
+	*id : bigint(20) <<generated>>
+	--
+	*user_id : varchar(255) <<FK>>
+	mail : varchar(255)
+	password : varchar(255)
+	login_failure_count : int(11)
+	name : varchar(255)
+	furigana : varchar(255)
+	authority_type : varchar(255)
+	status_type : varchar(255)
+}
+
+entity "LibraryCard" {
+	*checkout_number : bigint(20) <<generated>>
+	--
+	*isbn_code : varchar(13) <<FK>>
+	*user_id : varchar(255) <<FK>>
+	checkout_date : datetime(6)
+	return_plans_date : datetime(6)
+	return_date : datetime(6)
+}
+
+entity "Book" {
+	*id : bigint(20) <<generated>>
+	--
+	*isbn_code : varchar(13) <<FK>>
+	title : varchar(255)
+	sub_title : varchar(255)
+	edition : varchar(255)
+	publisher : varchar(255)
+	published_date : datetime(6)
+}
+
+User --o{ LibraryCard
+LibraryCard }o-- Book
+
+@enduml

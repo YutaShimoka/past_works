@@ -1,0 +1,5 @@
+/finished/*
+!/finished/Hello.cs
+/source/*
+!/source/Hello.java
+/tmp

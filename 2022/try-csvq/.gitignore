@@ -1,0 +1,5 @@
+/csvq
+/data/*
+!/data/sample_*.csv
+/result/total_due/*
+!/result/total_due/sample_*.csv
